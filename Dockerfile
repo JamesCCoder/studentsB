@@ -16,9 +16,11 @@ RUN ls /app/student_management_backend
 
 # 设置环境变量
 ENV DJANGO_SETTINGS_MODULE=student_management_backend.settings
+ENV PYTHONPATH=/app
 
 # 确认环境变量
 RUN echo $DJANGO_SETTINGS_MODULE
+RUN echo $PYTHONPATH
 
 # 运行数据库迁移
 RUN python manage.py migrate
