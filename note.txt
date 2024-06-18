@@ -1,0 +1,3 @@
+docker build -t student_management_backend .
+
+docker run -d -p 8000:8000 --name my_container student_management_backend
