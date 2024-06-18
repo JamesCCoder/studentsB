@@ -10,8 +10,14 @@ COPY . /app
 # 安装依赖项
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 确认文件结构
+RUN ls /app
+
 # 设置环境变量
 ENV DJANGO_SETTINGS_MODULE=student_management_backend.settings
+
+# 确认环境变量
+RUN echo $DJANGO_SETTINGS_MODULE
 
 # 运行数据库迁移
 RUN python manage.py migrate
