@@ -23,6 +23,7 @@ RUN echo $DJANGO_SETTINGS_MODULE
 RUN echo $PYTHONPATH
 
 # 运行数据库迁移
+RUN python manage.py makemigrations
 RUN python manage.py migrate
 
 # 运行 Django 应用程序
