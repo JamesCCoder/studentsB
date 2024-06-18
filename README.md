@@ -5,6 +5,7 @@
 ├── README.md
 ├── db.sqlite3
 ├── manage.py
+├── note.txt
 ├── requirements.txt
 ├── structure.txt
 ├── student_management_backend
@@ -23,5 +24,5 @@
     ├── urls.py
     └── views.py
 
-2 directories, 19 files
+2 directories, 20 files
 ```
