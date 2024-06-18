@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # 确认文件结构
 RUN ls /app
+RUN ls /app/student_management_backend
 
 # 设置环境变量
 ENV DJANGO_SETTINGS_MODULE=student_management_backend.settings
