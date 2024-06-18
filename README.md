@@ -18,11 +18,12 @@
     ├── __init__.py
     ├── admin.py
     ├── apps.py
+    ├── migrations
     ├── models.py
     ├── serializers.py
     ├── tests.py
     ├── urls.py
     └── views.py
 
-2 directories, 20 files
+3 directories, 20 files
 ```
