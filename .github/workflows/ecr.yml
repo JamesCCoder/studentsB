@@ -13,6 +13,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -26,11 +36,6 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        # Build the Docker image
         docker build -t student_management_backend .
-
-        # Tag the Docker image
         docker tag student_management_backend:latest 637423452251.dkr.ecr.us-east-1.amazonaws.com/student_management_backend:latest
-
-        # Push the Docker image to ECR
         docker push 637423452251.dkr.ecr.us-east-1.amazonaws.com/student_management_backend:latest
