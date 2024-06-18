@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: macos-12
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -23,11 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Install Docker
-      run: |
-        brew install --cask docker
-        open /Applications/Docker.app
-        while ! docker system info > /dev/null 2>&1; do sleep 1; done
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
