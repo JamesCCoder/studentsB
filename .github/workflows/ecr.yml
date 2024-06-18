@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - name: Checkout code
@@ -34,8 +34,14 @@ jobs:
       run: |
         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 637423452251.dkr.ecr.us-east-1.amazonaws.com
 
-    - name: Build and push Docker image
+    - name: Build Docker image
       run: |
         docker build -t student_management_backend .
+
+    - name: Tag Docker image
+      run: |
         docker tag student_management_backend:latest 637423452251.dkr.ecr.us-east-1.amazonaws.com/student_management_backend:latest
+
+    - name: Push Docker image to ECR
+      run: |
         docker push 637423452251.dkr.ecr.us-east-1.amazonaws.com/student_management_backend:latest
