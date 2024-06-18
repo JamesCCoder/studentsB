@@ -15,7 +15,7 @@ RUN ls /app
 RUN ls /app/student_management_backend
 
 # 设置环境变量
-ENV DJANGO_SETTINGS_MODULE=student_management_backend.settings
+ENV DJANGO_SETTINGS_MODULE=student_management_backend.settings.py
 ENV PYTHONPATH=/app
 
 # 确认环境变量
