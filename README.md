@@ -10,6 +10,7 @@
 ├── student_management_backend
 │   ├── __init__.py
 │   ├── asgi.py
+│   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 └── students
@@ -22,5 +23,5 @@
     ├── urls.py
     └── views.py
 
-2 directories, 18 files
+2 directories, 19 files
 ```
