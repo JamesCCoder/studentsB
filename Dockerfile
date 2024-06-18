@@ -23,7 +23,7 @@ RUN echo $DJANGO_SETTINGS_MODULE
 RUN echo $PYTHONPATH
 
 # 运行数据库迁移
-RUN python3 manage.py migrate
+RUN python manage.py migrate
 
 # 运行 Django 应用程序
 CMD ["gunicorn", "--workers", "3", "--bind", "0.0.0.0:8000", "student_management_backend.wsgi:application"]
