@@ -1,6 +1,7 @@
 # Project File Structure
 ```
 .
+├── README.md
 ├── db.sqlite3
 ├── manage.py
 ├── structure.txt
@@ -19,5 +20,5 @@
     ├── urls.py
     └── views.py
 
-2 directories, 15 files
+2 directories, 16 files
 ```
